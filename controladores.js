@@ -20,3 +20,12 @@ export const putdata = async(req, res) => {
     return res.status(201).json({message: "User not found"})
   }
 };
+
+usuariosFicticios[userIndex] = {
+  id: userId,
+  nombre: req.body.nombre,
+  mail: req.body.mail,
+  contrasena: req.body.contrasena
+};
+
+res.json(usuariosFicticios[userIndex])
