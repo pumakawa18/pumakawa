@@ -21,14 +21,19 @@ export const putdata = async(req, res) => {
   if (userIndex === -1){
     return res.status(201).json({message: "User not found"})
   }
+  
+  usuariosFicticios[userIndex] = {
+    id: userId,
+    nombre: req.body.nombre,
+    mail: req.body.mail,
+    contrasena: req.body.contrasena
+  };
+  
+  res.json(usuariosFicticios[userIndex])
 };
 
-usuariosFicticios[userIndex] = {
-  id: userId,
-  nombre: req.body.nombre,
-  mail: req.body.mail,
-  contrasena: req.body.contrasena
-};
-
-res.json(usuariosFicticios[userIndex])
+export const deleteData = (req, res) => {
+  const userId = parseInt(req.params.id);
+  res.json ({message: "usuario con id: " + userId + " eliminado"});
+}
 
