@@ -11,6 +11,8 @@ export const postdata = async(req, res) => {
   res.status(201).json(newUser);
 }
 
+// apapa pipipi
+
 export const putdata = async(req, res) => {
   const userId = parseInt(req.params.id);
   const userIndex = usuariosFicticios.findIndex(
