@@ -31,3 +31,4 @@ usuariosFicticios[userIndex] = {
 };
 
 res.json(usuariosFicticios[userIndex])
+
