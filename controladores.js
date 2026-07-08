@@ -10,6 +10,14 @@ export const postdata = async (req, res) => {
   console.log("User created successfully!!", { newUser })
   res.status(201).json(newUser);
 }
+usuariosFicticios[userIndex] = {
+  id: userId,
+  nombre: req.body.nombre,
+  mail: req.body.mail,
+  contrasena: req.body.contrasena
+};
+
+res.json(usuariosFicticios[userIndex])
 
 export const putdata = async (req, res) => {
   const userId = parseInt(req.params.id);
@@ -27,13 +35,4 @@ export const putdata = async (req, res) => {
     contrasena
   };
   console.log("User updated successfully!!", usuariosFicticios[userIndex]);
-
-  usuariosFicticios[userIndex] = {
-    id: userId,
-    nombre: req.body.nombre,
-    mail: req.body.mail,
-    contrasena: req.body.contrasena
-  };
-
-  res.json(usuariosFicticios[userIndex])
 };
