@@ -1,6 +1,6 @@
 // config express
 import express from 'express'
-import { getData, postData, putData } from './controladores.js';
+import { getData, postData, putData } from '../controladores.js';
 import { usuariosFicticios } from './basedatos.js';
 
 const PORT = 3000;
