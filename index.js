@@ -1,19 +1,16 @@
 // config express
 import express from 'express'
-import { getdata, postdata, putdata } from './controladores.js';
+import { getData, postData, putData } from './controladores.js';
 import { usuariosFicticios } from './basedatos.js';
 
 const PORT = 3000;
 const app = express();
 app.use(express.json());
 
-app.get("/users", getdata)
-app.post("/users", postdata)
-app.put("/users/:id", putdata)
+app.get("/users", getData)
+app.post("/users", postData)
+app.put("/users/:id", putData)
 
 app.listen(PORT,() => {
     console.log(`✅ Server running on port ${PORT}`)
 })
-
-// put
-// delete

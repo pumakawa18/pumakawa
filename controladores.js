@@ -1,10 +1,10 @@
 import { usuariosFicticios } from './basedatos.js';
 
-export const getdata = async(req,res) => {
+export const getData = async(req,res) => {
   res.json(usuariosFicticios);
 }
 
-export const postdata = async(req, res) => {
+export const postData = async(req, res) => {
   const {nombre, mail, contrasena} = req.body;
   const newUser = {id: usuariosFicticios.length + 1, nombre, mail, contrasena}
   console.log("User created successfully!!", {newUser})
@@ -13,7 +13,7 @@ export const postdata = async(req, res) => {
 
 // apapa pipipi
 
-export const putdata = async(req, res) => {
+export const putData = async(req, res) => {
   const userId = parseInt(req.params.id);
   const userIndex = usuariosFicticios.findIndex(
     user => user.id === userId
